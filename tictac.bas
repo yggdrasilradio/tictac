@@ -14,11 +14,11 @@
 	palette 9, 25 	' foreground: cyan
 
 	' Allocate arrays
-	dim a(9), c(24)
+	dim a(9), l(24), s(4)
 
 	' Define the 8 winning lines
 	for i = 1 to 24
-		read c(i)
+		read l(i)
 	next i
 
 	' 3 horizontal lines
@@ -149,7 +149,7 @@
 		x = 0			' Number of Xs in line
 		o = 0			' Number of Os in line
 		for j = i to i + 2
-			v = a(c(j))
+			v = a(l(j))
 			if v > 0 then
 				n = n + 1	' One more occupied square
 			end if
@@ -174,13 +174,13 @@
 		o = 0			' Number of Os in line
 		e = 0			' Index of empty square
 		for j = i to i + 2
-			if a(c(j)) = 56 then
+			if a(l(j)) = 56 then
 				x = x + 1	' One more X in this line
-			else if a(c(j)) = 47 then
+			else if a(l(j)) = 47 then
 				o = o + 1	' One more O in this line
 			end if
-			if a(c(j)) = 0 then
-				e = c(j)	' Index of empty square
+			if a(l(j)) = 0 then
+				e = l(j)	' Index of empty square
 			else
 				n = n + 1	' One more occupied square
 			end if
