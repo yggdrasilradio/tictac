@@ -14,7 +14,7 @@
 	palette 9, 25 	' foreground: cyan
 
 	' Allocate arrays
-	dim a(9), l(24), s(4)
+	dim a(9), l(24)
 
 	' Define the 8 winning lines
 	for i = 1 to 24
