@@ -10,7 +10,7 @@
 	rgb
 	width 40
 	palette 0, 0	' background: black
-	palette 9, 25 	' foreground: cyan
+	palette 8, 25 	' foreground: cyan
 
         ' Allocate arrays
         dim a(9), b(4), c(24), d(4), e(4)
@@ -231,13 +231,14 @@
                 o = 0                   ' Number of Os in line
                 e = 0                   ' Index of empty cell
                 for j = i to i + 2
+                        if a(c(j)) > 0 then
+                                n = n + 1
+			end if
                         if a(c(j)) = 56 then
                                 x = x + 1       ' One more X in this line
-                                n = n + 1
 			end if
 			if a(c(j)) = 47 then
                                 o = o + 1       ' One more O in this line
-                                n = n + 1
 			end if
 			if a(c(j)) = 0 then
                                 e = c(j)        ' Index of empty cell
